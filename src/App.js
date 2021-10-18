@@ -1,13 +1,19 @@
-import React, { Component } from 'react'
-import PropTypes  from 'prop-types'
-import PetShop from './PetShop'
+import React, { useRef } from 'react'
 
 function App () {
+  const inputRef = useRef()
+
+  const handleClick = () => {
+    inputRef.current.focus()
+    console.log('inputRef.current', inputRef.current)
+  }
+
   return(
-    <PetShop
-    dogs={2}
-    customerName='Marcos Vinicius'
-    />
+    <>  
+      Foco: <input ref={inputRef}/>
+      <br /><br /><br />
+      <button onClick = {handleClick}>Focar</button>  
+    </>
   )
 }
 export default App
