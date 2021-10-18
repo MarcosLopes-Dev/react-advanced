@@ -1,37 +1,23 @@
 import React, { useState } from 'react'
-import Button from './components/button'
-import Calc from './components/calc'
+//import Button from './components/button'
+//import Calc from './components/calc'
+import PhotosGallery from './components/photosGallery'
 
 function App () {
 
-  const[value, setValue] = useState(0)
-  const[min, setMin] = useState(0)
-  const[max, setMax] = useState(30)
-
-  const handleClick = () => {
-    setMin(10)   
-  }
-
-  const handleCalc = ({ target }) => {
-    const value = target.value
-    setValue( min + max + value )
-  }
+  const photos = [
+   'http://placeimg.com/140/60/people',
+    'http://placeimg.com/140/60/animals',
+    'http://placeimg.com/140/60/food',
+    'http://placeimg.com/140/60/music',
+  ]
 
   return(
     <>
-      <div>  
-        <Button onClick={handleClick}>
-          Adicionar carrinho
-        </Button>
-      </div>
-      <div>
-        <h1>Valor Calculado: {value}</h1>
-        <Calc 
-        min={min}
-        max={max}
-        onChange={handleCalc}
-        />
-      </div>  
+      <h1>Galeria de fotos</h1>
+      <PhotosGallery 
+        photos={photos}
+      />
     </>
   )
   
